@@ -43,7 +43,7 @@ public class ParkingBoyControllerTest {
 	    }
 
 	    @Test
-	    public void shouldGetParkingBoyWhenCallInsertParkingBoy() {
+	    public void should_get_parkingboy_list_when_insert_parkingboy() {
 	        // given
 	    	jdbcTemplate.execute("INSERT INTO parkingboy VALUES('11', 'aaa')");
 	        // when
