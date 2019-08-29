@@ -6,7 +6,7 @@
     </select>
     
     <insert id="insertParkingboy">
-    	insert into parkingboy (id,name,age)
+    	insert into parkingboy (parkingboy_id,parkingboy_name)
     	values
     	(#{parkingboy.parkingboy_id},#{parkingboy.parkingboy_name})
     </insert>
