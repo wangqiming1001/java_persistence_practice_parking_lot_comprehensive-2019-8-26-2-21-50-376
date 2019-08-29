@@ -13,5 +13,5 @@ CREATE TABLE parkinglot (
   parkinglot_id VARCHAR(64) PRIMARY KEY,
   capacity INTEGER NOT NULL,
   available_position_count INTEGER NOT NULL,
-  parkinglot_id VARCHAR(64) NOT NULL
+  parkingboy_id VARCHAR(64) NOT NULL
 );

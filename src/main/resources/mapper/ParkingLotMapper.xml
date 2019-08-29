@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="tws.repository.ParkingLotMapper">
-    <select id="selectAll" resultType="tws.entity.Parkinglot">
+    <select id="selectAll" resultType="tws.entity.ParkingLot">
         select * from `parkinglot`;
     </select>
     
     <insert id="insertParkingLot">
     	insert into parkinglot (parkinglot_id,capacity,available_position_count,parkinglot_id)
     	values
-    	(#{parkinglot.parkinglot_id},#{parkinglot.capacity},
-    	#{parkinglot.available_position_count},#{parkinglot.parkinglot_id})
+    	(#{parkinglot.parkingLotID},#{parkinglot.capacity},
+    	#{parkinglot.availablePositionCount},#{parkinglot.parkingBoyID})
     </insert>
     
 </mapper>
