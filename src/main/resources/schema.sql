@@ -6,12 +6,12 @@ CREATE TABLE employee (
 
 CREATE TABLE parkingboy (
   parkingboy_id varchar(64) PRIMARY KEY,
-  parkingboy_name VARCHAR(64) NOT NULL,
+  parkingboy_name VARCHAR(64) NOT NULL
 );
 
 CREATE TABLE parkinglot (
   parkinglot_id VARCHAR(64) PRIMARY KEY,
   capacity INTEGER NOT NULL,
   available_position_count INTEGER NOT NULL,
-  parkinglot_id VARCHAR(64) NOT NULL,
+  parkinglot_id VARCHAR(64) NOT NULL
 );

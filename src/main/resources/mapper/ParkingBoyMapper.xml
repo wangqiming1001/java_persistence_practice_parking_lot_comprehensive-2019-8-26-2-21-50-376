@@ -8,7 +8,7 @@
     <insert id="insertParkingboy">
     	insert into parkingboy (parkingboy_id,parkingboy_name)
     	values
-    	(#{parkingboy.parkingboy_id},#{parkingboy.parkingboy_name})
+    	(#{parkingboy.parkingBoyID},#{parkingboy.parkingBoyName})
     </insert>
     
 </mapper>
