@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tws.repository.ParkingBoyMapper">
+    <select id="selectAll" resultType="tws.entity.ParkingBoy">
+        select * from `parkingboy`;
+    </select>
+    
+    <insert id="insertParkingboy">
+    	insert into parkingboy (id,name,age)
+    	values
+    	(#{parkingboy.parkingboy_id},#{parkingboy.parkingboy_name})
+    </insert>
+    
+</mapper>
+
+CREATE TABLE parkinglot (
+  parkinglot_id VARCHAR(64) PRIMARY KEY,
+  capacity INTEGER NOT NULL,
+  available_position_count INTEGER NOT NULL,
+  parkinglot_id VARCHAR(64) NOT NULL,
+);
