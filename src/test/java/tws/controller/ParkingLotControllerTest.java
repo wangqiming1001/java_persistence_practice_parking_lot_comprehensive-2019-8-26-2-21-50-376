@@ -30,7 +30,8 @@ public class ParkingLotControllerTest {
 	@Test
 	public void should_return_201_status_when_create_parkingboy() throws Exception {
 		//Given
-		MockHttpServletRequestBuilder input = post("/parkingboy/insert").content("{\"parkingBoyID\":\"123\",\"parkingBoyName\":\"aaa\"}").contentType(MediaType.APPLICATION_JSON);
+		MockHttpServletRequestBuilder input = post("/parkinglot/insert")
+				.content("{\"parkingLotID\":\"123\",\"capacity\":\"3\",\"availablePositionCount\":\"1\",\"parkingBoyID\":\"1\"}").contentType(MediaType.APPLICATION_JSON);
 		//When
 		ResultActions result = mockMvc.perform(input);
 		//Then
@@ -40,11 +41,11 @@ public class ParkingLotControllerTest {
 	}
 
 	@Test
-	public void should_return_ok_and_content_when_query_all_parkingboy() throws Exception {
-		//Given
-		MockHttpServletRequestBuilder input = post("/parkingboy/insert").content("{\"parkingBoyName\":\"aaa\"}").contentType(MediaType.APPLICATION_JSON);
+	public void should_return_ok_and_content_when_query_all_parkinglot() throws Exception {
+		MockHttpServletRequestBuilder input = post("/parkinglot/insert")
+				.content("{\"parkingLotID\":\"123\",\"capacity\":\"3\",\"availablePositionCount\":\"1\",\"parkingBoyID\":\"1\"}").contentType(MediaType.APPLICATION_JSON);
 		mockMvc.perform(input);
-		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/parkingboy/getAll");
+		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/parkinglot/getAll");
 		//When
 		ResultActions performResult = mockMvc.perform(requestBuilder);
 		//Then
