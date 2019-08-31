@@ -20,7 +20,7 @@ import tws.entity.ParkingBoy;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ParkingBoyControllerTest {
+public class ParkingBoyMapperTest {
 
 	    @Autowired
 	    private ParkingBoyMapper parkingBoyMapper;

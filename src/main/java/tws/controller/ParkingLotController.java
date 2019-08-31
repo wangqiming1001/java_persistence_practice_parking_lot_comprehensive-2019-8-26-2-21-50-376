@@ -14,24 +14,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import tws.entity.ParkingLot;
 import tws.repository.ParkingLotMapper;
+import tws.service.ParkingLotService;
 
 @RestController
 @RequestMapping("/parkinglot")
 public class ParkingLotController {
 
 	@Autowired
-	private ParkingLotMapper parkingLotMapper;
+	private ParkingLotService parkingLotService;
 	
-	 @GetMapping("")
-	    public ResponseEntity<List<ParkingLot>> getAll() {
-	        return ResponseEntity.ok(parkingLotMapper.selectAll());
-	    }
+	@GetMapping("/getAll")
+	public ResponseEntity<List<ParkingLot>> getAll() {
+	    return ResponseEntity.ok(parkingLotService.getAll());
+	}
 	 
-	 @PostMapping("/insert")
-	    public ResponseEntity<ParkingLot> insertEmployee(@RequestBody ParkingLot parkingLot) {
-	    	String parkingboyID = UUID.randomUUID().toString();
-	    	parkingLot.setParkingBoyID(parkingboyID);;
-	    	parkingLotMapper.insertParkingLot(parkingLot);
-	        return ResponseEntity.created(URI.create(URI.create("/parkinglot")+parkingLot.getParkingLotID())).build();
-	    }
+	@PostMapping("/insert")
+	public ResponseEntity<ParkingLot> insertParkingLot(@RequestBody ParkingLot parkingLot) {
+		parkingLotService.insertParkingLot(parkingLot);
+	    return ResponseEntity.created(URI.create(URI.create("/parkinglot")+parkingLot.getParkingLotID())).build();
+	}
 }

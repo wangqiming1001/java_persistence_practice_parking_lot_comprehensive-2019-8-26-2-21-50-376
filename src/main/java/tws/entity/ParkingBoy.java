@@ -29,7 +29,8 @@ public class ParkingBoy {
 		this.parkingBoyID = parkingBoyID;
 		this.parkingBoyName = parkingBoyName;
 	}
-	
+	public ParkingBoy() {
+	}
 	
 	
 }

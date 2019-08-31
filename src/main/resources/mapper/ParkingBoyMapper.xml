@@ -2,14 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="tws.repository.ParkingBoyMapper">
     <select id="selectAll" resultType="tws.entity.ParkingBoy">
-        select * from `parkingboy`;
+        select * from parkingboy;
     </select>
     
-    <insert id="insertParkingboy">
-    	insert into parkingboy (parkingboy_id,parkingboy_name)
+    <insert id="insertParkingBoy">
+    	insert into parkingboy (parkingBoyID,parkingBoyName)
     	values
-    	(#{parkingboy.parkingBoyID},#{parkingboy.parkingBoyName})
+    	(#{parkingBoy.parkingBoyID},#{parkingBoy.parkingBoyName})
     </insert>
+    
+    <select id="selectByParkingBoyId" resultType="map">
+        select parkingBoyID as "parkingBoyID" ,parkingBoyName as "parkingBoyName" from parkingboy
+        where 
+        parkingBoyID = #{parkingBoyID}
+    </select>
     
 </mapper>
 
